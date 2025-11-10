@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Persona;
 import view.ShowConsole;
 
 public class MetodosBusqueda {
@@ -64,6 +65,44 @@ public class MetodosBusqueda {
         for (int i = 0; i < arreglo.length; i++) {
             if (arreglo[i] == valor) {
                 return arreglo[i];
+            }
+        }
+        return null;
+    }
+
+    // Buscar una persona por nombre
+    public Persona searchPersonByName(Persona[] personas, String name){
+        for (Persona persona : personas) {
+            if (persona.getName().equalsIgnoreCase(name)) {
+                return persona;
+            }
+        }
+        return null;
+    }
+
+    // Encontrar una persona que sea mayor de: age
+    // Y la edad sea impar
+    public Persona findPersonByAgeAndImpar(Persona[] personas, int age){
+        for (Persona persona : personas) {
+            // Persona con edad mayor a 'age' y edad impar
+            if (persona.getAge() > age && persona.getAge() % 2 != 0) {
+                return persona;
+            }
+        }
+        return null;
+    }
+
+    // Buscar una persona por valor del nombre (suma de códigos ASCII igual a value)
+    public Persona findPersonaByValueName(Persona[] personas, int value) {
+        for (Persona persona : personas) {
+            int suma = 0;
+            // Calcula el "valor del nombre" sumando los códigos ASCII de cada letra
+            for (int i = 0; i < persona.getName().length(); i++) {
+                suma += persona.getName().charAt(i);
+                //convertir el nombre (una cadena de texto) en sus caracteres individuales, y sumar el valor numérico (código ASCII) de cada uno.
+            }
+            if (suma == value) {
+                return persona;
             }
         }
         return null;

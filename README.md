@@ -8,3 +8,6 @@
 
 ### Busqueda Lineal en Java
 ![alt text](assets/PracticaClase.png)
+
+### Busqueda lienal de personas en Java
+![alt text](assets/ArregloPersonas.png)

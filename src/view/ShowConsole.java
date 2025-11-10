@@ -1,5 +1,7 @@
 package view;
 
+import models.Persona;
+
 // Métodos solo para imprimir
 public class ShowConsole {
 
@@ -20,7 +22,7 @@ public class ShowConsole {
         if (posicion == -1) {
             System.out.println("Error... el numero buscado no se encontro el [" + numeroBuscado + "]");
         } else {
-            System.out.println("El numero [" + numeroBuscado + "] encontro en la posiscion [" + posicion + "]");
+            System.out.println("El numero [" + numeroBuscado + "] encontro en la posicion [" + posicion + "]");
         }
     }
 
@@ -32,4 +34,32 @@ public class ShowConsole {
             System.out.println("Error...el numero buscado NO se encontro");
         }
     }
+
+    // Mostrar resultado búsqueda por nombre
+    public void showPersonResult(Persona persona, String name) {
+        if (persona != null) {
+            System.out.println("Persona encontrada: " + persona);
+        } else {
+            System.out.println("Error... no se encontro a una persona con el nombre " + name);
+        }
+    }
+
+    // Mostrar resultado búsqueda por edad impar y mayor que age
+    public void showPersonResult2(Persona persona, int age) {
+        if (persona != null) {
+            System.out.println("Persona encontrada: " + persona);
+        } else {
+            System.out.println("Error... no se encontro a una persona mayor de " + age + " con edad impar");
+        }
+    }
+
+    // Mostrar resultado de búsqueda por valor del nombre
+    public void showPersonResult3(Persona persona, int value, boolean valorNombre) {
+        if (persona != null) {
+            System.out.println("Persona encontrada con valor " + value + ": " + persona);
+        } else {
+            System.out.println("Error... no se encontro a una persona con valor  " + value + "");
+        }
+    }
+
 }
